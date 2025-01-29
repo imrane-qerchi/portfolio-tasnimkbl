@@ -4,14 +4,14 @@ import LinkedinIcon from '@/assets/Linkedin.svg';
 </script>
 
 <template>
-  <footer class="bg-[#C36E9A] text-white py-10 px-6 absolute bottom-0 w-full">
+  <footer class="bg-[#C36E9A] text-white py-10 px-6 mt-auto w-full">
     <div class="relative flex items-center w-full">
-      <!-- Icône LinkedIn (Aligné à gauche) -->
+      <!-- Icône LinkedIn -->
       <a href="https://www.linkedin.com/in/tasnim-kebaili/" target="_blank" class="absolute left-0">
         <img :src="LinkedinIcon" alt="LinkedIn" class="h-6 w-6 lg:h-8 lg:w-8" />
       </a>
 
-      <!-- Liens du menu (Toujours parfaitement centrés) -->
+      <!-- Liens du menu -->
       <nav class="mx-auto flex space-x-8 lg:space-x-40 text-xs lg:text-lg">
         <RouterLink to="/a-propos">À PROPOS</RouterLink>
         <RouterLink to="/projets">PROJETS</RouterLink>
