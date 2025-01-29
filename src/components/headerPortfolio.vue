@@ -29,15 +29,15 @@ const toggleMenu = () => {
     <!-- Modal Menu (petit espace en haut à droite) -->
     <div
       v-if="isMenuOpen"
-      class="fixed top-0 right-0 w-36 h-48 bg-[#72BF96] rounded-2xl shadow-lg flex flex-col justify-center items-center mr-2 mt-2"
+      class="fixed top-0 right-0 w-36 h-48 bg-[#72BF96] rounded-2xl shadow-lg flex flex-col justify-center items-center mr-3 mt-3"
     >
       <!-- Bouton de fermeture -->
-      <button @click="toggleMenu" class="absolute top-4 right-4">
+      <button @click="toggleMenu" class="absolute top-3 right-4">
         <span class="text-[#FAE4F0] text-2xl font-bold">×</span>
       </button>
 
       <!-- Liens du menu -->
-      <nav class="flex flex-col items-center space-y-4 text-white text-xs">
+      <nav class="flex flex-col items-center space-y-4 text-white text-base">
         <RouterLink to="/a-propos" @click="toggleMenu">À PROPOS</RouterLink>
         <RouterLink to="/projets" @click="toggleMenu">PROJETS</RouterLink>
         <RouterLink to="/contact" @click="toggleMenu">CONTACT</RouterLink>
