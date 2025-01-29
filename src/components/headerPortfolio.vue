@@ -13,7 +13,7 @@ const toggleMenu = () => {
 
 <template>
   <!-- Version Mobile -->
-  <header class="bg-[#FAE4F0] py-4 px-6 flex justify-between items-center md:hidden">
+  <header class="py-4 px-6 flex justify-between items-center md:hidden">
     <!-- Logo -->
     <img src="/logo-kbl.svg" alt="Logo" class="h-10" />
 

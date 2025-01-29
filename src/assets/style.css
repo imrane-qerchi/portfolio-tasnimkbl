@@ -6,4 +6,11 @@
     }
   }
 
+@font-face {
+    font-family: 'Oliver';
+    src: url('@/assets/fonts/Oliver-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 @import 'tailwindcss';
