@@ -14,12 +14,14 @@
     "typegen": "pocketbase-typegen --db ./pocketbase/pb_data/data.db --out ./src/pocketbase-types.ts"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.0",
     "pocketbase": "^0.21.5",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
+    "@tailwindcss/postcss": "^4.0.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
     "@vitejs/plugin-vue": "^5.0.5",
@@ -31,9 +33,9 @@
     "eslint-plugin-vue": "^9.23.0",
     "npm-run-all2": "^6.2.0",
     "pocketbase-typegen": "^1.2.1",
-    "postcss": "^8.4.45",
+    "postcss": "^8.5.1",
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.10",
+    "tailwindcss": "^4.0.0",
     "typescript": "~5.4.0",
     "unplugin-vue-router": "^0.10.8",
     "vite": "^5.3.1",

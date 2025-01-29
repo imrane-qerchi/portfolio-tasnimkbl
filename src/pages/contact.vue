@@ -3,6 +3,6 @@
 
 <template>
   <header>
-    <h1>Moi c’est Tasnim,Graphic&Web Designer</h1>
+    <h1>Contact</h1>
   </header>
 </template>

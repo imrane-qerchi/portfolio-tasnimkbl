@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'unplugin-vue-router/vite'
@@ -11,7 +12,8 @@ export default defineConfig({
     }),
     // ⚠️ Vue must be placed after VueRouter()
     vue(),
-    vueDevTools()
+    vueDevTools(),
+    tailwindcss(),
   ],
   resolve: {
     alias: {
