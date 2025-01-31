@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import circleSvg from '@/assets/cercle.svg';
+import circleSvg from '@/assets/cercle.svg'
 </script>
 
 <template>

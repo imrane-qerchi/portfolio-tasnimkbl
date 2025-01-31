@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 
 // État pour ouvrir/fermer le menu en mobile
-const isMenuOpen = ref(false);
+const isMenuOpen = ref(false)
 
 // Fonction pour basculer le menu en mobile
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+  isMenuOpen.value = !isMenuOpen.value
+}
 </script>
 
 <template>
@@ -46,11 +46,15 @@ const toggleMenu = () => {
   </header>
 
   <!-- Version Desktop (Barre latérale fixée à droite) -->
-  <aside class="hidden md:flex fixed right-0 h-screen max-h-[calc(100vh-100px)] w-32 bg-[#72BF96] flex-col justify-center items-center space-y-10 text-[#FAE4F0] text-2xl font-semibold">
-  <div class="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-36 whitespace-nowrap">
-    <RouterLink to="/a-propos" class="rotate-90">À PROPOS</RouterLink>
-    <RouterLink to="/projets" class="rotate-90">PROJETS</RouterLink>
-    <RouterLink to="/contact" class="rotate-90">CONTACT</RouterLink>
-  </div>
-</aside>
+  <aside
+    class="hidden md:flex fixed right-0 h-screen max-h-[calc(100vh-100px)] w-32 bg-[#72BF96] flex-col justify-center items-center space-y-10 text-[#FAE4F0] text-2xl font-semibold"
+  >
+    <div
+      class="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-36 whitespace-nowrap"
+    >
+      <RouterLink to="/a-propos" class="rotate-90">À PROPOS</RouterLink>
+      <RouterLink to="/projets" class="rotate-90">PROJETS</RouterLink>
+      <RouterLink to="/contact" class="rotate-90">CONTACT</RouterLink>
+    </div>
+  </aside>
 </template>

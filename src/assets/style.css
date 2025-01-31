@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-@layer base {
-    body, * {
-      font-family: 'Poppins', sans-serif !important;
-    }
-  }
-
 @font-face {
-    font-family: 'Oliver';
-    src: url('@/assets/fonts/Oliver-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Oliver';
+  src: url('@/assets/fonts/Oliver-Regular.ttf') format('truetype'); /* ✅ Correct */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  body,
+  * {
+    font-family: 'Poppins', sans-serif !important;
   }
-  
+}
+
 @import 'tailwindcss';

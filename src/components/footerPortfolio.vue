@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-import LinkedinIcon from '@/assets/Linkedin.svg';
+import { RouterLink } from 'vue-router'
+import LinkedinIcon from '@/assets/Linkedin.svg'
 </script>
 
 <template>
