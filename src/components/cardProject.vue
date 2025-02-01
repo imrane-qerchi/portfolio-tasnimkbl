@@ -71,7 +71,7 @@ const props = defineProps<ProjectsResponse>()
     <div
       class="flex flex-col justify-start items-start w-[150.89px] lg:w-[280px] absolute left-[32px] top-[175.45px] lg:left-[80px] lg:top-[360px] gap-6"
     >
-      <p class="text-[15.258278846740723px] lg:text-[24px] font-semibold text-left text-black">
+      <p class="text-[15.258278846740723px] lg:text-2xl font-semibold text-left text-black">
         {{ titre }}
       </p>
       <p
@@ -87,8 +87,9 @@ const props = defineProps<ProjectsResponse>()
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="w-[19.5px] h-[20.34px] lg:w-[35px] lg:h-[35px] absolute left-[175px] top-[175px] lg:left-[330px] lg:top-[360px]"
+      class="w-[19.5px] h-[20.34px] lg:w-[50px] lg:h-[50px] absolute left-[175px] top-[175px] lg:left-[330px] lg:top-[360px]"
       preserveAspectRatio="none"
+      style="filter: drop-shadow(-7.986755847930908px 8.87417221069336px 0px rgba(0, 0, 0, 0.44))"
     >
       <g filter="url(#filter0_d_3054_1273)">
         <rect

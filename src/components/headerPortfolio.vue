@@ -45,16 +45,23 @@ const toggleMenu = () => {
     </div>
   </header>
 
-  <!-- Version Desktop (Barre latérale fixée à droite) -->
-  <aside
-    class="hidden md:flex fixed right-0 h-screen max-h-[calc(100vh-100px)] w-32 bg-[#72BF96] flex-col justify-center items-center space-y-10 text-[#FAE4F0] text-2xl font-semibold"
-  >
-    <div
-      class="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-36 whitespace-nowrap"
+  <div class="relative flex">
+    <!-- Contenu principal (décalé pour éviter de passer sous le header latéral) -->
+    <main class="w-full">
+      <router-view />
+    </main>
+
+    <!-- Barre latérale fixée à droite -->
+    <aside
+      class="hidden md:flex fixed inset-y-0 right-0 w-32 h-screen bg-[#72BF96] flex-col justify-center items-center space-y-10 text-[#FAE4F0] text-2xl font-semibold"
     >
-      <RouterLink to="/a-propos" class="rotate-90">À PROPOS</RouterLink>
-      <RouterLink to="/projets" class="rotate-90">PROJETS</RouterLink>
-      <RouterLink to="/contact" class="rotate-90">CONTACT</RouterLink>
-    </div>
-  </aside>
+      <div
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-36 whitespace-nowrap"
+      >
+        <RouterLink to="/a-propos" class="rotate-90">À PROPOS</RouterLink>
+        <RouterLink to="/projets" class="rotate-90">PROJETS</RouterLink>
+        <RouterLink to="/contact" class="rotate-90">CONTACT</RouterLink>
+      </div>
+    </aside>
+  </div>
 </template>

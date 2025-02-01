@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { pb } from '@/backend'
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import CardProject from '@/components/cardProject.vue'
 import fondMobile from '@/assets/fond-mobile.svg'
 import photoAccueil from '@/assets/photo-accueil.png'
@@ -48,18 +48,18 @@ const duplicatedSkills = computed(() => [...skills, ...skills])
   <section class="w-full py-16 px-6">
     <!-- Titre non centré en desktop + espace à gauche -->
     <h2
-      class="text-2xl md:text-4xl font-bold text-black mb-6 underline underline-offset-4 text-center lg:text-left lg:ml-12"
+      class="text-2xl md:text-7xl font-oliver font-bold text-black mb-6 underline underline-offset-4 text-center lg:text-left lg:ml-12 mb-16"
     >
       Qui suis-je ?
     </h2>
 
-    <div class="flex flex-col items-center lg:flex-row lg:justify-center lg:gap-30">
+    <div class="flex flex-col items-center lg:flex-row lg:justify-center lg:gap-60 gap-20">
       <!-- Image avec lettres en collage -->
       <img :src="tasnimCercle" alt="Tasnim en cercle" class="w-40 md:w-52 lg:w-80" />
 
       <!-- Texte de présentation -->
-      <div class="max-w-md text-center lg:text-left">
-        <p class="text-base md:text-2xl text-black font-semibold">
+      <div class="max-w-md text-left">
+        <p class="text-base md:text-2xl text-black">
           Je m'appelle Tasnim, j’ai 19 ans, et après avoir obtenu mon bac général, je pensais
           poursuivre des études plutôt classiques mais mon parcours a pris une tournure passionnante
           et inattendue en 2023.
@@ -74,27 +74,36 @@ const duplicatedSkills = computed(() => [...skills, ...skills])
   </section>
 
   <!-- Section "Mes Projets" -->
-  <div class="min-h-screen lg:mx-20">
-    <section class="w-full py-16 px-6 text-center">
+<div class="min-h-screen lg:mx-20">
+  <section class="w-full py-16 px-6 text-center relative">
+    <!-- Conteneur du titre avec positionnement relatif -->
+    <div class="relative inline-block mx-auto">
       <h2
-        class="text-2xl md:text-4xl font-bold text-black mb-6 underline underline-offset-4 text-center lg:text-left lg:ml-12"
+        class="text-2xl md:text-7xl font-oliver font-bold text-black mb-6 underline underline-offset-4 text-center"
       >
         Mes projets
       </h2>
+      <!-- Bouton "Voir Plus" positionné en bas à droite -->
+      <img
+        src="@/assets/voir-plus.png"
+        alt="Voir Plus"
+        class="absolute lg:-bottom-15 lg:-right-30 w-32 md:w-50"
+      />
+    </div>
 
-      <!-- Liste des projets les moins récents -->
-      <div
-        v-if="projetsMoinsRecents.length > 0"
-        class="flex flex-col lg:flex-row lg:justify-center gap-20 lg:gap-50"
-      >
-        <CardProject v-for="project in projetsMoinsRecents" :key="project.id" v-bind="project" />
-      </div>
-      <p v-else class="text-gray-500">Aucun projet trouvé.</p>
-    </section>
-  </div>
+    <!-- Liste des projets -->
+    <div
+      v-if="projetsMoinsRecents.length > 0"
+      class="flex flex-col lg:flex-row lg:flex-wrap lg:justify-center gap-20 lg:gap-50 mt-12"
+    >
+      <CardProject v-for="project in projetsMoinsRecents" :key="project.id" v-bind="project" />
+    </div>
+    <p v-else class="text-gray-500">Aucun projet trouvé.</p>
+  </section>
+</div>
 
   <!-- Bandeau défilant des compétences -->
-  <div class="banner-container p-2 lg:p-6">
+  <div class="mt-30 banner-container p-2 lg:p-6">
     <div class="scroll-container">
       <span v-for="(skill, index) in duplicatedSkills" :key="index" class="skill-item">
         <span class="text-black font-normal lg:text-4xl">{{ skill.nom }}</span>

@@ -5,7 +5,7 @@ import FooterPortfolio from './components/footerPortfolio.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#FAE4F0] font-sans">
+  <div class="min-h-screen bg-[#FAE4F0] font-poppins pl-0 md:pr-32">
     <HeaderPortfolio />
 
     <main>
