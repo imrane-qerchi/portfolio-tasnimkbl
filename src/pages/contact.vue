@@ -2,6 +2,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { pb } from '@/backend' // Pour l'enregistrement dans PocketBase
+import envoyerIcon from '@/assets/envoyer.png' // Import de l'image
+import soulignerSvg from '@/assets/souligner.svg' // Import de l'image
 
 // Références pour les champs du formulaire
 const nom = ref('')
@@ -38,16 +40,23 @@ const envoyerMessage = async () => {
 <template>
   <div class="min-h-screen flex flex-col items-center py-12 px-6 lg:px-32">
     <!-- Titre -->
-    <h1 class="text-3xl lg:text-5xl font-oliver font-bold tracking-wide text-black uppercase">
-      Contacte moi !
+    <h1
+      class="text-3xl lg:text-7xl font-oliver font-bold tracking-wide text-black uppercase relative text-center"
+    >
+      Contacte moi
+      <img
+        :src="soulignerSvg"
+        alt="Soulignement"
+        class="absolute -bottom-3 lg:-bottom-8 left-0 w-28 lg:w-84 -rotate-3"
+      />
     </h1>
 
     <!-- Formulaire -->
-    <form @submit.prevent="envoyerMessage" class="mt-12 w-full max-w-lg lg:max-w-3xl">
+    <form @submit.prevent="envoyerMessage" class="mt-12 w-full max-w-lg lg:max-w-3xl relative">
       <!-- NOM -->
       <div class="flex items-center mb-8 lg:mb-10">
         <label
-          class="text-sm lg:text-lg font-bold uppercase bg-[#72BF96] text-black px-4 py-2 w-48 lg:w-64 text-left border-l-3"
+          class="text-sm lg:text-3xl font-oliver font-bold uppercase bg-[#72BF96] text-black px-4 w-48 lg:w-64 text-left border-l-2"
         >
           Nom
         </label>
@@ -62,9 +71,9 @@ const envoyerMessage = async () => {
       <!-- PRENOM -->
       <div class="flex items-center mb-8 lg:mb-10">
         <label
-          class="text-sm lg:text-lg font-bold uppercase bg-[#72BF96] text-black px-4 py-2 w-48 lg:w-64 text-left border-l-3"
+          class="text-sm lg:text-3xl font-oliver font-bold uppercase bg-[#72BF96] text-black px-4 w-48 lg:w-64 text-left border-l-2"
         >
-          Prénom
+          Prenom
         </label>
         <input
           v-model="prenom"
@@ -77,7 +86,7 @@ const envoyerMessage = async () => {
       <!-- EMAIL -->
       <div class="flex items-center mb-8 lg:mb-10">
         <label
-          class="text-sm lg:text-lg font-bold uppercase bg-[#72BF96] text-black px-4 py-2 w-48 lg:w-64 text-left border-l-3"
+          class="text-sm lg:text-3xl font-oliver font-bold uppercase bg-[#72BF96] text-black px-4 w-48 lg:w-64 text-left border-l-2"
         >
           Ton Email
         </label>
@@ -93,27 +102,22 @@ const envoyerMessage = async () => {
       <!-- PROJET -->
       <div class="flex items-start mb-8 lg:mb-12">
         <label
-          class="text-sm lg:text-lg font-bold uppercase bg-[#72BF96] text-black px-4 py-2 w-48 lg:w-64 text-left border-l-3"
+          class="text-sm lg:text-3xl font-oliver font-bold uppercase bg-[#72BF96] text-black px-4 w-48 lg:w-64 text-left border-l-2"
         >
           Ton Projet
         </label>
         <textarea
           v-model="projet"
-          placeholder="Je voulais te faire part de mon projet de marque  ......."
+          placeholder="Je voulais te faire part de mon projet de marque ......."
           rows="5"
           class="border-b-2 border-black w-full bg-transparent ml-6 focus:outline-none resize-none text-lg lg:text-xl"
         ></textarea>
       </div>
 
       <!-- Bouton Envoyer -->
-      <div class="flex justify-center">
-        <button
-          type="submit"
-          class="bg-black text-white text-lg lg:text-xl py-3 px-8 rounded-lg shadow-md hover:bg-gray-800 transition"
-        >
-          Envoyer
-        </button>
-      </div>
+      <button type="submit" class="absolute -bottom-24 -right-50 mb-4 mr-4">
+        <img :src="envoyerIcon" alt="Envoyer" class="w-16 h-auto lg:w-80 lg:h-auto" />
+      </button>
     </form>
   </div>
 </template>

@@ -46,6 +46,9 @@ const toggleMenu = () => {
   </header>
 
   <div class="relative flex">
+    <!-- Logo en haut à gauche en desktop -->
+    <img src="/logo-kbl.svg" alt="Logo" class="hidden md:block absolute top-4 left-6 lg:left-15 h-12 lg:h-30" />
+
     <!-- Contenu principal (décalé pour éviter de passer sous le header latéral) -->
     <main class="w-full">
       <router-view />
