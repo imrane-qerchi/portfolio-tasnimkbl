@@ -4,7 +4,6 @@ import { pb } from '@/backend'
 import { computed } from 'vue'
 import CardProject from '@/components/cardProject.vue'
 import fondMobile from '@/assets/fond-mobile.svg'
-import fondDesktop from '@/assets/fond-desktop.svg'
 import photoAccueil from '@/assets/photo-accueil.png'
 import boutonImg from '@/assets/votre.png'
 import tasnimCercle from '@/assets/tasnim-cercle.svg'
@@ -29,57 +28,63 @@ const duplicatedSkills = computed(() => [...skills, ...skills])
 <template>
   <!-- Section d'introduction -->
   <section
-    class="relative w-full min-h-[600px] flex flex-col items-center justify-center bg-cover bg-center px-6 lg:flex-row lg:gap-12"
+    class="relative w-full min-h-[600px] flex flex-col items-center justify-center bg-cover bg-center px-6 md:flex-row md:gap-12"
   >
     <!-- Fond Mobile (visible uniquement sur mobile) -->
     <img
       :src="fondMobile"
       alt="Fond Mobile"
-      class="absolute inset-0 w-full h-full object-cover lg:hidden"
+      class="absolute inset-0 w-full h-full object-cover md:hidden"
     />
     <!-- Fond Desktop (visible uniquement sur desktop)
     <img
       :src="fondDesktop"
       alt="Fond Desktop"
-      class="absolute inset-0 w-full h-fit object-cover hidden lg:block"
+      class="absolute inset-0 w-full h-fit object-cover hidden md:block"
     /> -->
 
-<!-- Titre principal --> 
-<div class="text-center lg:text-left relative">
-  <h1 class="text-3xl md:text-5xl font-semibold relative leading-tight text-center z-10">
-    Moi c’est 
-    <strong class="relative inline-block">
-      <!-- Cercle SVG en arrière-plan -->
-      <div class="absolute inset-0 -z-10 w-full h-auto flex justify-center items-center">
-        <img src="@/assets/cercle.svg" alt="Cercle autour de Tasnim" class="w-32 md:w-48" />
-      </div>
-      Tasnim
-    </strong>, <br />Graphic & Web Designer
-    <!-- Photo en bas à droite du h1 -->
-    <img
-      :src="photoAccueil"
-      alt="Photo de Tasnim"
-      class="absolute lg:-bottom-70 -bottom-20 lg:-right-44 -right-3 w-32 md:w-64 lg:w-80"
-    />
-    <!-- Bouton au milieu à gauche -->
-    <div class="absolute top-8 lg:top-1 -left-5 lg:-left-20 -rotate-3 z-0">
-      <img :src="boutonImg" alt="Votre" class="w-24 md:w-28 lg:w-42" />
+    <!-- Titre principal -->
+    <div class="text-center md:text-left relative">
+      <h1 class="text-3xl md:text-5xl font-semibold relative leading-tight text-center z-10">
+        Moi c’est
+        <strong class="relative inline-block">
+          <!-- Cercle SVG en arrière-plan -->
+          <div class="absolute inset-0 -z-10 w-full h-auto flex justify-center items-center">
+            <img src="@/assets/cercle.svg" alt="Cercle autour de Tasnim" class="w-32 md:w-48" />
+          </div>
+          Tasnim </strong
+        >, <br />Graphic & Web Designer
+        <!-- Photo en bas à droite du h1 -->
+        <img
+          :src="photoAccueil"
+          alt="Photo de Tasnim"
+          class="absolute md:-bottom-70 -bottom-20 md:-right-44 -right-3 w-32 md:w-64 md:w-80"
+        />
+        <!-- Bouton au milieu à gauche -->
+        <div class="absolute top-8 md:top-1 -left-5 md:-left-20 -rotate-3 z-0">
+          <img :src="boutonImg" alt="Votre" class="w-24 md:w-28 md:w-42" />
+        </div>
+      </h1>
     </div>
-  </h1>
-</div>
   </section>
 
-  <section class="w-full py-16 px-6 mt-28">
+  <!-- Section "Qui suis-je ?" -->
+  <section class="w-full py-16 px-6 md:mt-28 relative">
     <!-- Titre non centré en desktop + espace à gauche -->
     <h2
-      class="text-2xl md:text-7xl font-oliver font-bold text-black mb-6 underline underline-offset-4 text-center lg:text-left lg:ml-12 mb-16"
+      class="text-2xl md:text-7xl font-oliver font-bold text-black mb-6 text-center md:text-left md:ml-12 mb-16 relative"
     >
       Qui suis-je ?
+      <img
+        src="@/assets/souligner.svg"
+        alt="Soulignement"
+        class="absolute left-1/2 md:left-0 transform -translate-x-1/2 md:translate-x-0 bottom-[-13px] md:-bottom-7 w-30 md:w-72 -rotate-3"
+      />
     </h2>
 
-    <div class="flex flex-col items-center lg:flex-row lg:justify-center lg:gap-60 gap-20">
+    <div class="flex flex-col items-center md:flex-row md:justify-center md:gap-60 gap-20 relative">
       <!-- Image avec lettres en collage -->
-      <img :src="tasnimCercle" alt="Tasnim en cercle" class="w-40 md:w-52 lg:w-80" />
+      <img :src="tasnimCercle" alt="Tasnim en cercle" class="w-40 md:w-52 md:w-80" />
 
       <!-- Texte de présentation -->
       <div class="max-w-md text-left">
@@ -88,37 +93,48 @@ const duplicatedSkills = computed(() => [...skills, ...skills])
           poursuivre des études plutôt classiques mais mon parcours a pris une tournure passionnante
           et inattendue en 2023.
         </p>
-
-        <!-- Bouton "Voir plus" -->
-        <button class="mt-6 py-2 px-4">
-          <img src="@/assets/voir-plus.png" alt="Votre" class="w-24 md:w-28 lg:w-42" />
-        </button>
       </div>
+      <!-- Bouton "Voir plus" positionné en bas à droite en mobile et desktop -->
+      <router-link
+        to="/about"
+        class="absolute -bottom-10 right-20 md:-bottom-4 md:right-20 py-2 px-4"
+      >
+        <img
+          src="@/assets/voir-plus.png"
+          alt="Voir Plus"
+          class="w-24 md:w-28 md:w-42 transition-transform duration-300 hover:scale-110"
+        />
+      </router-link>
     </div>
   </section>
 
   <!-- Section "Mes Projets" -->
-  <div class="min-h-screen lg:mx-20">
+  <div class="min-h-screen md:mx-20">
     <section class="w-full py-16 px-6 text-center relative">
       <!-- Conteneur du titre avec positionnement relatif -->
       <div class="relative inline-block mx-auto">
-        <h2
-          class="text-2xl md:text-7xl font-oliver font-bold text-black mb-6 underline underline-offset-4 text-center"
-        >
+        <h2 class="text-2xl md:text-7xl font-oliver font-bold text-black mb-6 text-center relative">
           Mes projets
+          <img
+            src="@/assets/souligner.svg"
+            alt="Soulignement"
+            class="absolute left-10 md:left-28 bottom-[-10px] md:-bottom-10 -rotate-3 w-24 md:w-72"
+          />
         </h2>
-        <!-- Bouton "Voir Plus" positionné en bas à droite -->
-        <img
-          src="@/assets/voir-plus.png"
-          alt="Voir Plus"
-          class="absolute lg:-bottom-15 lg:-right-30 w-32 md:w-50"
-        />
+        <!-- Bouton "Voir Plus" positionné en bas à droite du titre -->
+        <router-link to="/projects" class="absolute -bottom-6 md:-bottom-18 -right-10 md:-right-30">
+          <img
+            src="@/assets/voir-plus.png"
+            alt="Voir Plus"
+            class="w-24 md:w-50 transition-transform duration-300 hover:scale-110"
+          />
+        </router-link>
       </div>
 
       <!-- Liste des projets -->
       <div
         v-if="projetsMoinsRecents.length > 0"
-        class="flex flex-col lg:flex-row lg:flex-wrap lg:justify-center gap-20 lg:gap-50 mt-28"
+        class="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center gap-20 md:gap-50 mt-10 md:mt-28"
       >
         <CardProject v-for="project in projetsMoinsRecents" :key="project.id" v-bind="project" />
       </div>
@@ -127,36 +143,41 @@ const duplicatedSkills = computed(() => [...skills, ...skills])
   </div>
 
   <!-- Bandeau défilant des compétences -->
-  <div class="mt-30 banner-container p-2 lg:p-6">
+  <div class="mt-10 md:mt-30 banner-container p-2 md:p-6">
     <div class="scroll-container">
       <span v-for="(skill, index) in duplicatedSkills" :key="index" class="skill-item">
-        <span class="text-black font-normal lg:text-4xl">{{ skill.nom }}</span>
+        <span class="text-black font-normal md:text-4xl">{{ skill.nom }}</span>
         <span
           v-if="index % skills.length !== skills.length - 1"
-          class="separator text-3xl lg:text-5xl text-[#72BF96] lg:text-"
+          class="separator text-3xl md:text-5xl text-[#72BF96] md:text-"
           >&nbsp;&nbsp;&nbsp;&nbsp;✦</span
         >
       </span>
     </div>
   </div>
 
-  <!-- Section de contact -->
-  <section class="flex justify-center items-center py-40 px-6 bg-pink-100">
+  <!-- Section de contact responsive -->
+  <section class="flex justify-center items-center py-20 px-6">
     <div
-      class="w-[921px] h-[304px] relative overflow-hidden rounded-sm bg-[#fae4f0] border-[6px] border-[#121420]"
-      style="box-shadow: 21px 21px 0px 0 rgba(0, 0, 0, 0.4)"
+      class="relative overflow-hidden rounded-sm bg-[#fae4f0] border-[6px] border-[#121420] shadow-[20px_20px_0px_rgba(0,0,0,0.4)] w-full max-w-[921px] p-6 md:p-12"
     >
       <p
-        class="w-[691px] h-[43px] absolute left-24 top-[47px] text-[45px] font-medium text-left text-[#121420]"
+        class="text-[#121420] font-medium text-left md:text-center text-lg md:text-4xl whitespace-nowrap"
       >
         Prêt à donner vie à tes idées ?
       </p>
-      <p
-        class="w-[831px] h-10 absolute left-[34px] top-[116px] text-[25px] font-semibold text-center text-[#121420]"
-      >
+      <p class="text-[#121420] font-semibold text-center text-sm md:text-2xl mt-2 md:mt-4">
         Je serais ravie de collaborer !
       </p>
-      <div class="w-[339.41px] h-[147.98px] absolute left-[287.2px] top-[111px]"></div>
+      <div class="flex justify-center mt-4 md:mt-6">
+        <router-link to="/contact">
+          <img
+            src="@/assets/contacte-moi.png"
+            class="w-36 md:w-96 h-auto object-cover transition-transform duration-300 hover:scale-110"
+            alt="Contacte-moi"
+          />
+        </router-link>
+      </div>
     </div>
   </section>
 </template>
@@ -170,6 +191,7 @@ const duplicatedSkills = computed(() => [...skills, ...skills])
   transform: rotate(-3deg);
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
   background: #c36e9a;
+  z-index: 10; /* Met un z-index plus bas */
 }
 
 /* Scroll infini fluide */

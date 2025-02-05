@@ -13,9 +13,11 @@ const toggleMenu = () => {
 
 <template>
   <!-- Version Mobile -->
-  <header class="py-4 px-6 flex justify-between items-center md:hidden">
+  <header class="py-4 px-6 flex justify-between items-center md:hidden md:z-50 relative">
     <!-- Logo -->
-    <img src="/logo-kbl.svg" alt="Logo" class="h-10" />
+    <RouterLink to="/">
+      <img src="/logo-kbl.svg" alt="Logo" class="h-10 transition-transform duration-300 hover:scale-110" />
+    </RouterLink>
 
     <!-- Bouton Menu -->
     <button @click="toggleMenu" class="focus:outline-none">
@@ -47,7 +49,14 @@ const toggleMenu = () => {
 
   <div class="relative flex">
     <!-- Logo en haut à gauche en desktop -->
-    <img src="/logo-kbl.svg" alt="Logo" class="hidden md:block absolute top-4 left-6 lg:left-15 h-12 lg:h-30" />
+    <RouterLink to="/">
+  <img 
+    src="/logo-kbl.svg" 
+    alt="Logo" 
+    class="hidden md:block absolute top-4 left-6 md:left-15 h-12 md:h-30 transition-transform duration-300 hover:scale-110" 
+  />
+</RouterLink>
+
 
     <!-- Contenu principal (décalé pour éviter de passer sous le header latéral) -->
     <main class="w-full">
@@ -56,8 +65,8 @@ const toggleMenu = () => {
 
     <!-- Barre latérale fixée à droite -->
     <aside
-      class="hidden md:flex fixed inset-y-0 right-0 w-32 h-screen bg-[#72BF96] flex-col justify-center items-center space-y-10 text-[#FAE4F0] text-2xl font-semibold"
-    >
+  class="hidden md:flex fixed inset-y-0 right-0 w-32 h-screen bg-[#72BF96] flex-col justify-center items-center space-y-10 text-[#FAE4F0] text-2xl font-semibold z-50"
+>
       <div
         class="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col space-y-36 whitespace-nowrap"
       >

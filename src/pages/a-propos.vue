@@ -6,26 +6,26 @@ import soulignerSvg from '@/assets/souligner.svg'
 </script>
 
 <template>
-  <div class="flex flex-col items-center py-8 lg:py-12 px-6 lg:px-32">
+  <div class="flex flex-col items-center py-8 md:py-12 px-6 md:px-32">
     <!-- Titre -->
     <h1
-      class="text-3xl lg:text-7xl font-oliver font-bold tracking-wide text-black uppercase relative text-center"
+      class="text-3xl md:text-7xl font-oliver font-bold tracking-wide text-black uppercase relative text-center"
     >
       A PROPOS DE MOI
       <img
         :src="soulignerSvg"
         alt="Soulignement"
-        class="absolute -bottom-3 lg:-bottom-8 left-2 lg:left-4 w-28 lg:w-68 -rotate-2"
+        class="absolute -bottom-3 md:-bottom-8 left-2 md:left-4 w-28 md:w-68 -rotate-2"
       />
     </h1>
 
     <!-- Image et Lettres -->
     <div class="md:hidden relative flex justify-center mt-12">
-      <img :src="aProposImage" alt="Tasnim" class="w-80 md:w-80 lg:w-[500px] rounded-lg z-10" />
+      <img :src="aProposImage" alt="Tasnim" class="w-80 md:w-80 md:w-[500px] rounded-lg z-10" />
     </div>
 
     <!-- Texte de présentation -->
-    <div class="mt-12 lg:mt-40 font-bold text-left text-xs lg:text-2xl text-black leading-relaxed px-6">
+    <div class="mt-12 md:mt-40 font-bold text-left text-xs md:text-2xl text-black leading-relaxed px-6">
       <p>
         Moi c’est Tasnim et j’ai 19 ans. Après un bac général en HGGSP et SES, j'étais partie pour
         continuer dans une voie assez classique… jusqu'à ce que je découvre le BUT MMI pendant ma
@@ -53,9 +53,9 @@ import soulignerSvg from '@/assets/souligner.svg'
     <img :src="skillsImage" alt="Compétences" class="w-full mx-auto" />
   </div>
 
-  <div class="flex flex-col items-center py-12 px-6 lg:px-32">
+  <div class="flex flex-col items-center py-12 px-6 md:px-32">
     <!-- Texte d'invitation -->
-    <div class="md:my-12 text-left text-xs lg:text-2xl text-black font-bold leading-relaxed px-6">
+    <div class="md:my-12 text-left text-xs md:text-2xl text-black font-bold leading-relaxed px-6">
       <p>
         Que vous soyez à la recherche d’un talent créatif pour votre projet ou simplement curieux de
         découvrir mon univers, je vous invite à explorer mon site et à me contacter pour toute
@@ -63,6 +63,13 @@ import soulignerSvg from '@/assets/souligner.svg'
       </p>
     </div>
   </div>
+
+  <!-- Lien vers la page de contact -->
+  <div class="flex justify-center mb-20 transition-transform duration-300 hover:scale-110">
+      <router-link to="/contact">
+        <img src="@/assets/contacte-moi.png" alt="Contactez-moi" class="w-40 md:w-96 mx-auto" />
+      </router-link>
+    </div>
 </template>
 
 <style scoped>

@@ -8,11 +8,11 @@ const props = defineProps<ProjectsResponse>()
 
 <template>
   <div
-    class="w-[198.36px] h-64 lg:w-[400px] lg:h-[550px] relative"
+    class="w-[198.36px] h-64 md:w-[400px] md:h-[550px] relative transition-transform duration-300 hover:scale-110"
     style="filter: drop-shadow(-7.986755847930908px 8.87417221069336px 0px rgba(0, 0, 0, 0.44))"
   >
     <div
-      class="w-[187px] h-[245.5px] lg:w-[366px] lg:h-[521px] absolute left-[21px] lg:left-[40px] top-[17.5px] lg:top-[39px] bg-[#fae4f0]"
+      class="w-[187px] h-[245.5px] md:w-[366px] md:h-[521px] absolute left-[21px] md:left-[40px] top-[17.5px] md:top-[39px] bg-[#fae4f0]"
     ></div>
     <svg
       width="236"
@@ -20,7 +20,7 @@ const props = defineProps<ProjectsResponse>()
       viewBox="0 0 236 287"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="w-[230.3px] h-[280.85px] lg:w-[450px] lg:h-[600px]"
+      class="w-[230.3px] h-[280.85px] md:w-[450px] md:h-[600px]"
       preserveAspectRatio="none"
     >
       <path
@@ -65,17 +65,17 @@ const props = defineProps<ProjectsResponse>()
       :filename="miniature"
       width="157"
       height="135"
-      class="w-[157.67px] h-[134.78px] lg:w-[284px] lg:h-[253px] absolute left-[35px] top-[28px] lg:left-[80px] lg:top-[70px] object-cover border-[1.27px] lg:border-4 border-black"
+      class="w-[157.67px] h-[134.78px] md:w-[284px] md:h-[253px] absolute left-[35px] top-[28px] md:left-[80px] md:top-[70px] object-cover border-[1.27px] md:border-4 border-black"
     />
 
     <div
-      class="flex flex-col justify-start items-start w-[150.89px] lg:w-[280px] absolute left-[32px] top-[175.45px] lg:left-[80px] lg:top-[360px] gap-6"
+      class="flex flex-col justify-start items-start w-[150.89px] md:w-[280px] absolute left-[32px] top-[175.45px] md:left-[80px] md:top-[360px] gap-6"
     >
-      <p class="text-[15.258278846740723px] lg:text-2xl font-semibold text-left text-black">
+      <p class="text-[15.258278846740723px] md:text-2xl font-semibold text-left text-black">
         {{ titre }}
       </p>
       <p
-        class="w-[150.89px] h-[26.28px] lg:w-[270px] lg:h-[50px] text-[10.172184944152832px] lg:text-[18px] text-left text-black"
+        class="w-[150.89px] h-[26.28px] md:w-[270px] md:h-[50px] text-[10.172184944152832px] md:text-[18px] text-left text-black"
       >
         {{ sous_titre }}
       </p>
@@ -87,7 +87,7 @@ const props = defineProps<ProjectsResponse>()
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="w-[19.5px] h-[20.34px] lg:w-[50px] lg:h-[50px] absolute left-[175px] top-[175px] lg:left-[330px] lg:top-[360px]"
+      class="w-[19.5px] h-[20.34px] md:w-[50px] md:h-[50px] absolute left-[175px] top-[175px] md:left-[330px] md:top-[360px]"
       preserveAspectRatio="none"
       style="filter: drop-shadow(-7.986755847930908px 8.87417221069336px 0px rgba(0, 0, 0, 0.44))"
     >
@@ -110,11 +110,11 @@ const props = defineProps<ProjectsResponse>()
 
     <img
       :src="scotch"
-      class="w-[49.62px] h-[34.05px] lg:w-[90px] lg:h-[70px] absolute left-[4.62px] top-[0px] object-cover"
+      class="w-[49.62px] h-[34.05px] md:w-[90px] md:h-[70px] absolute left-[4.62px] top-[0px] object-cover"
     />
     <img
       :src="scotch"
-      class="w-[58.11px] h-[39.88px] lg:w-[100px] lg:h-[80px] absolute left-[170px] top-[235.4px] lg:left-[340px] lg:top-[510px] object-cover"
+      class="w-[58.11px] h-[39.88px] md:w-[100px] md:h-[80px] absolute left-[170px] top-[235.4px] md:left-[340px] md:top-[510px] object-cover"
     />
   </div>
 </template>
